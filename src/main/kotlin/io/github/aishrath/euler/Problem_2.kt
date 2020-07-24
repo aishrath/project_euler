@@ -19,7 +19,7 @@ fun main() {
 
 class EvenFib {
 
-    private val ans: MutableList<Int> = mutableListOf()
+    private val ans: MutableSet<Int> = mutableSetOf()
 
     fun sum(): Int {
         fib(BigInteger.ONE, BigInteger.valueOf(2), BigInteger.valueOf(100))
