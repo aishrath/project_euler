@@ -9,5 +9,5 @@ package io.github.aishrath.euler
 */
 
 fun main() {
-    println((1..999).filter { it % 3 == 0 || it % 5 == 0 }.sum())
+    println((3..999).filter { it % 3 == 0 || it % 5 == 0 }.sum())
 }
