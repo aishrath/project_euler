@@ -19,15 +19,15 @@ fun main() {
 
 class EvenFib {
 
-    private val ans: MutableSet<Int> = mutableSetOf()
+    private var ans: Int = 0
 
     fun sum(): Int {
         fib(BigInteger.ONE, BigInteger.valueOf(2), BigInteger.valueOf(100))
-        return ans.filter { it % 2 == 0 }.sum()
+        return ans
     }
 
     private tailrec fun fib(a: BigInteger, b: BigInteger, n: BigInteger): BigInteger {
-        ans.add(if (a.toString().length < 9 && a.intValueExact() < 4_000_000) a.intValueExact() else 0)
+        ans += if (a.toString().length < 9 && a.intValueExact() < 4_000_000 && a.intValueExact() % 2 == 0) a.intValueExact() else 0
         return if (n == BigInteger.ZERO) a else fib(b, a + b, n - BigInteger.ONE)
     }
 }
