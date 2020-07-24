@@ -27,8 +27,7 @@ class EvenFib {
     }
 
     private tailrec fun fib(a: BigInteger, b: BigInteger, n: BigInteger): BigInteger {
-        val m = if (a.toString().length < 9) a.intValueExact() else 0
-        if (m < 4_000_000) ans.add(m)
+        ans.add(if (a.toString().length < 9 && a.intValueExact() < 4_000_000) a.intValueExact() else 0)
         return if (n == BigInteger.ZERO) a else fib(b, a + b, n - BigInteger.ONE)
     }
 }
