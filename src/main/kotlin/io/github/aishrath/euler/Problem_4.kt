@@ -16,7 +16,6 @@ private fun Int.isProductOfTwoThreeDigitNums(): Boolean {
     return false
 }
 
-
 private fun Int.isPalindrome(): Boolean {
     val (x, y) = this.toString().chunked(3)
     return x == y.reversed()
