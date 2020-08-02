@@ -8,21 +8,14 @@ package io.github.aishrath.euler
 */
 
 fun main() {
-    print((100_001..999 * 999).filter { it.isPalindrome() && it.isProductOfTwoThreeDigitNums() })
-    //print((100_001..999 * 999).filter { it.isPalindrome() })
-    //print((100_001..999 * 999).filter { it.isProductOfTwoThreeDigitNums() }.max())
+    print((100_001..999 * 999).filter { it.isPalindrome() && it.isProductOfTwoThreeDigitNums() }.max())
 }
 
 private fun Int.isProductOfTwoThreeDigitNums(): Boolean {
-    val s = mutableListOf<Int>()
-    for (x in 100..999) {
-        if (this % x == 0) {
-            s.add(x)
-        }
-    }
-    println("$this --> $s")
+    for (x in 100..999) if (this % x == 0) for (y in x..999) if (this % y == 0 && x * y == this) return true
     return false
 }
+
 
 private fun Int.isPalindrome(): Boolean {
     val (x, y) = this.toString().chunked(3)
