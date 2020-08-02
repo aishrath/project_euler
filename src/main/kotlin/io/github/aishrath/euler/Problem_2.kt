@@ -18,7 +18,6 @@ fun main() {
 }
 
 class EvenFib {
-
     private var ans: Int = 0
 
     fun sum(): Int {
